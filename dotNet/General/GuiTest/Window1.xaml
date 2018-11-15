@@ -42,6 +42,7 @@
                         </StackPanel>
                         <ListView Grid.Row="1" Name="activeTaskList" AllowDrop="True" 
                                   Drop="activeTaskList_Drop"
+                                  DragEnter="activeTaskList_DragEnter"
                       ItemsSource="{Binding UserTasks}"
                       >
                             <ListView.View>

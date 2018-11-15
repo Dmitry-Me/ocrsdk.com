@@ -107,6 +107,14 @@ namespace GuiTest
             }
         }
 
+        private void activeTaskList_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true) == true)
+            {
+                e.Effects = DragDropEffects.Copy;
+            }
+        }
+
         private void activeTaskList_Drop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, true) == true)
