@@ -43,7 +43,7 @@
                         <ListView Grid.Row="1" Name="activeTaskList" AllowDrop="True" 
                                   Drop="activeTaskList_Drop"
                                   DragEnter="activeTaskList_DragEnter"
-                                  DragOver="activeTaskList_DragEnter"
+                                  DragOver="activeTaskList_DragOver"
                       ItemsSource="{Binding UserTasks}"
                       >
                             <ListView.View>

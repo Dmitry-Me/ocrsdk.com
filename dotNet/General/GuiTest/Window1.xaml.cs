@@ -107,11 +107,25 @@ namespace GuiTest
             }
         }
 
-        private void activeTaskList_DragEnter(object sender, DragEventArgs e)
+        private void activeTaskList_DragOver(object sender, DragEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine(
+                String.Format("Entered DragOver(), allowed affects are {0}", e.AllowedEffects));
             if (e.Data.GetDataPresent(DataFormats.FileDrop, true) == true)
             {
-                e.Effects = DragDropEffects.Copy;
+                System.Diagnostics.Debug.WriteLine("DragOver() settings 'Copy|Link'");
+                e.Effects = DragDropEffects.Copy | DragDropEffects.Link;
+            }
+        }
+
+        private void activeTaskList_DragEnter(object sender, DragEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(
+                String.Format("Entered DragEnter(), allowed affects are {0}", e.AllowedEffects));
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true) == true)
+            {
+                System.Diagnostics.Debug.WriteLine("DragEnter() settings 'Copy|Link'");
+                e.Effects = DragDropEffects.Copy | DragDropEffects.Link;
             }
         }
 
